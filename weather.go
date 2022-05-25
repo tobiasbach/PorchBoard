@@ -10,8 +10,10 @@ import (
 	"github.com/joho/godotenv"
 )
 
+// returns specified weather forecast data queried from AccuWeather API
 func main() {
 	godotenv.Load(".env")
+	// location key for 15370 Fredersdorf: '1026032'
 	url := fmt.Sprintf("http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/1026032?apikey=%s&language=de&details=true&metric=true", os.Getenv("APIKeyAccuWeather"))
 	resp, _ := http.Get(url)
 
@@ -22,10 +24,6 @@ func main() {
 	log.Println(string(body))
 }
 
-// http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/{locationKey}
-// location key for 15370 Fredersdorf: '1026032'
-// temperature value is accurate according to our heating system temp sensor
-
 // AccuWeather provides hourly forecast up to 12hrs
-// AccuWesther provides daily forecast up to 5 days
-// Limited to 50 calls a day ~ 1 call every 30 minutes
+// AccuWeather provides daily forecast up to 5 days
+// Free plan is limited to 50 calls a day ~ 1 call every 30 minutes
