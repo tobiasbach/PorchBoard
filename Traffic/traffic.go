@@ -1,4 +1,4 @@
-package main
+package traffic
 
 import (
 	"fmt"
@@ -10,7 +10,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func main() {
+func Conditions() {
 	godotenv.Load(".env")
 	versionNumber := "1"
 	destination := "52.57596,13.87884" // Amiceria Strausberg
