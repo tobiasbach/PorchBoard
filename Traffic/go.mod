@@ -1,4 +1,4 @@
-module github.com/tobiasbach/PorchBoard/Traffic
+module traffic
 
 go 1.17
 

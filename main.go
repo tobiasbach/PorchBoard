@@ -1,7 +1,7 @@
 package main
 
-import "github.com/tobiasbach/PorchBoard/Traffic"
+import "github.com/tobiasbach/PorchBoard/traffic"
 
 func main() {
-	Traffic.Conditions
+	traffic.Conditions
 }
