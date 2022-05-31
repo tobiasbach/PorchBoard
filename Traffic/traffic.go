@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	godotenv.Load("../.env")
+	godotenv.Load(".env")
 	versionNumber := "1"
 	destination := "52.57596,13.87884" // Amiceria Strausberg
 	routePlanningLocations := fmt.Sprintf("%s:%s", os.Getenv("Home"), destination)

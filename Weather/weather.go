@@ -12,7 +12,7 @@ import (
 
 // returns specified weather forecast data queried from AccuWeather API
 func main() {
-	godotenv.Load("../.env")
+	godotenv.Load(".env")
 	// location key for 15370 Fredersdorf: '1026032'
 	url := fmt.Sprintf("http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/1026032?apikey=%s&language=de&details=true&metric=true", os.Getenv("APIKeyAccuWeather"))
 	resp, _ := http.Get(url)
