@@ -6,7 +6,8 @@ WORKDIR /PorchBoard
 COPY go.mod go.sum ./
 RUN go mod download && go mod verify
 
-COPY . ./
+
+COPY . .
 RUN go build -v
 
-CMD ["PorchBoard"]
+CMD ["/bin/sh"]
