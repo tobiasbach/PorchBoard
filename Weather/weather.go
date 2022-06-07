@@ -1,4 +1,4 @@
-package main
+package weather
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ import (
 )
 
 // returns specified weather forecast data queried from AccuWeather API
-func main() {
+func Forecast() {
 	godotenv.Load(".env")
 	// location key for 15370 Fredersdorf: '1026032'
 	url := fmt.Sprintf("http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/1026032?apikey=%s&language=en&details=true&metric=true", os.Getenv("APIKeyAccuWeather"))
