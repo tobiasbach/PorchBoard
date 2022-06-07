@@ -1,4 +1,4 @@
-module github.com/tobiasbach/PorchBoard
+module PorchBoard
 
 go 1.17
 
