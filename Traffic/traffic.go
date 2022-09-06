@@ -10,6 +10,15 @@ import (
 	"github.com/joho/godotenv"
 )
 
+type Routes []struct {
+	Summary Summary
+}
+
+type Summary struct {
+	LengthInMeters      int `json: "lengthInMeters"`
+	TravelTimeInSeconds int `json: "travelTimeInSeconds"`
+}
+
 func Conditions() {
 	godotenv.Load(".env")
 	versionNumber := "1"
