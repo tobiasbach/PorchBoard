@@ -1,7 +1,11 @@
 package main
 
-// import "github.com/tobiasbach/PorchBoard/Traffic"
+import (
+	"PorchBoard/traffic"
+	"PorchBoard/weather"
+)
 
 func main() {
-	traffic()
+	traffic.Conditions()
+	weather.Forecast()
 }
