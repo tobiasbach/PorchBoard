@@ -10,8 +10,17 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func main() {
-	godotenv.Load("../.env")
+type Routes []struct {
+	Summary Summary
+}
+
+type Summary struct {
+	LengthInMeters      int `json: "lengthInMeters"`
+	TravelTimeInSeconds int `json: "travelTimeInSeconds"`
+}
+
+func Conditions() {
+	godotenv.Load(".env")
 	versionNumber := "1"
 	destination := "52.57596,13.87884" // Amiceria Strausberg
 	routePlanningLocations := fmt.Sprintf("%s:%s", os.Getenv("Home"), destination)
