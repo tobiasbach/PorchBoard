@@ -1,0 +1,3 @@
+package temperature
+
+// placeholder file
