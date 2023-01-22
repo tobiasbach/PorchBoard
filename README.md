@@ -1,8 +1,10 @@
 # PorchBoard
 
-This is a training application.
+## This is an training application
 
-It shall provide an infotainment board displaying:
+## It will become an infotainment board that provides users with relevant data before they leave the house
+
+Incomplete list of examples:
 
 * weather data
   * current outdoor temperature (from personal heating system via Viessmann API)
@@ -15,5 +17,3 @@ It shall provide an infotainment board displaying:
   * calendar events (Google Calendar API)
 * public warnings
   * information and warnings for citizens (BIWAPP or similar)
-
-(incomplete and non-final list of examples)
