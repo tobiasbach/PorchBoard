@@ -7,11 +7,11 @@
 Incomplete list of examples:
 
 * weather data
-  * current outdoor temperature (from personal heating system via Viessmann API)
-  * short-term weather forecast (AccuWeather API)
+  * current outdoor temperature (from personal heating system via [Viessmann](https://developer.viessmann.com/start.html))
+  * short-term weather forecast ([AccuWeather](https://developer.accuweather.com))
 * transportation data
-  * estimated travel time for frequently used routes (TomTom API)
-  * next train from local station to x leaving in x minutes
+  * estimated travel time for frequently used routes ([TomTom](https://developer.tomtom.com/))
+  * next train from local station to x leaving in x minutes ([VBB](https://www.vbb.de/vbb-services/api-open-data/api))
   * travel time for the previous option
 * appointments data
   * calendar events (Google Calendar API)
