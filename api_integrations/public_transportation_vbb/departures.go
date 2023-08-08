@@ -1,6 +1,7 @@
 package vbb
 
 import (
+	"encoding/xml"
 	"fmt"
 	"io"
 	"log"
@@ -30,6 +31,11 @@ func Departures() {
 		log.Fatal(err)
 	}
 
-	// TO-DO XML parsing
+	// unmarshal bytes to struct
+	var departureBoard DepartureBoard
+	xml.Unmarshal([]byte(body), &departureBoard)
+
+	// return departureBoard (return = print as long as this is a command line tool)
 	fmt.Print(string(body))
+	fmt.Printf("\nNext departure at: %s", fmt.Sprint(departureBoard.Departure[0].Time))
 }
