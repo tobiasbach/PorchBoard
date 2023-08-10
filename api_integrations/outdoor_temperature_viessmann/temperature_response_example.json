@@ -1,0 +1,24 @@
+{
+    "data": {
+        "properties": {
+            "value": {
+                "type": "number",
+                "value": 21,
+                "unit": "celsius"
+            },
+            "status": {
+                "type": "string",
+                "value": "connected"
+            }
+        },
+        "commands": {},
+        "apiVersion": 1,
+        "uri": "https://api.viessmann.com/iot/v2/features/installations/1986695/gateways/7724827140474216/devices/0/features/heating.sensors.temperature.outside",
+        "gatewayId": "7724827140474216",
+        "feature": "heating.sensors.temperature.outside",
+        "timestamp": "2023-08-10T12:32:36.196Z",
+        "isEnabled": true,
+        "isReady": true,
+        "deviceId": "0"
+    }
+}
