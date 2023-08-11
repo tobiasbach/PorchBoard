@@ -40,3 +40,13 @@ There is a [public collection](https://www.postman.com/vimicho/workspace/viessma
 
 Need to pass installation ID, gateway serial and device ID with the request. Don't forget the Bearer token for Authorization.
 https://api.viessmann.com/iot/v2/features/installations/INSTALLATION_ID/gateways/GATEWAY_SERIAL/devices/DEVICE_ID/features/heating.sensors.temperature.outside
+
+Request successful, response body in expected format with expected data
+
+WIP: Unmarshaling / accessing data from the response body returns unexpected value:
+
+RESPONSE BODY:
+{"data":{"properties":{"value":{"type":"number","value":18.1,"unit":"celsius"},"status":{"type":"string","value":"connected"}},"commands":{},"apiVersion":1,"uri":"https://api.viessmann.com/iot/v2/features/installations/xxx/gateways/xxx/devices/xxx/features/heating.sensors.temperature.outside","gatewayId":"xxx","feature":"heating.sensors.temperature.outside","timestamp":"2023-08-11T20:47:58.613Z","isEnabled":true,"isReady":true,"deviceId":"0"}}
+
+UNMARSHALED OUTSIDE TEMPERATURE COMPLETE:
+{{{1 {} 0 heating.sensors.temperature.outside xxx true true {{string connected} {number celsius 0}} 2023-08-11T20:47:58.613Z https://api.viessmann.com/iot/v2/features/installations/xxx/gateways/xxx/devices/xxx/features/heating.sensors.temperature.outside}}}

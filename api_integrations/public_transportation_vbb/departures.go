@@ -37,5 +37,5 @@ func Departures() {
 
 	// return departureBoard (return = print as long as this is a command line tool)
 	// fmt.Print(string(body))
-	fmt.Printf("\nNext departure from %s at %s direction %s", fmt.Sprintf(departureBoard.Departure[0].Stop), fmt.Sprint(departureBoard.Departure[0].Time), fmt.Sprintf(departureBoard.Departure[0].Direction))
+	fmt.Printf("\nNext departure from %s at %s direction %s\n\n", fmt.Sprintf(departureBoard.Departure[0].Stop), fmt.Sprint(departureBoard.Departure[0].Time), fmt.Sprintf(departureBoard.Departure[0].Direction))
 }

@@ -10,6 +10,6 @@ import (
 func main() {
 	traffic.Conditions()
 	weather.Forecast()
-	temperature.Outdoor()
+	temperature.Outside()
 	vbb.Departures()
 }
