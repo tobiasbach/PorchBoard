@@ -15,9 +15,9 @@ type OutsideTemperature struct {
 				Value string `json:"value"`
 			} `json:"status"`
 			Value struct {
-				Type  string `json:"type"`
-				Unit  string `json:"unit"`
-				Value int64  `json:"value"`
+				Type  string  `json:"type"`
+				Unit  string  `json:"unit"`
+				Value float64 `json:"value"`
 			} `json:"value"`
 		} `json:"properties"`
 		Timestamp string `json:"timestamp"`

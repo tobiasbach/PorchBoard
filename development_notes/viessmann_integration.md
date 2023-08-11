@@ -44,9 +44,4 @@ https://api.viessmann.com/iot/v2/features/installations/INSTALLATION_ID/gateways
 Request successful, response body in expected format with expected data
 
 WIP: Unmarshaling / accessing data from the response body returns unexpected value:
-
-RESPONSE BODY:
-{"data":{"properties":{"value":{"type":"number","value":18.1,"unit":"celsius"},"status":{"type":"string","value":"connected"}},"commands":{},"apiVersion":1,"uri":"https://api.viessmann.com/iot/v2/features/installations/xxx/gateways/xxx/devices/xxx/features/heating.sensors.temperature.outside","gatewayId":"xxx","feature":"heating.sensors.temperature.outside","timestamp":"2023-08-11T20:47:58.613Z","isEnabled":true,"isReady":true,"deviceId":"0"}}
-
-UNMARSHALED OUTSIDE TEMPERATURE COMPLETE:
-{{{1 {} 0 heating.sensors.temperature.outside xxx true true {{string connected} {number celsius 0}} 2023-08-11T20:47:58.613Z https://api.viessmann.com/iot/v2/features/installations/xxx/gateways/xxx/devices/xxx/features/heating.sensors.temperature.outside}}}
+FIX: The response example unfortunately returned value '21' which I understood as int64 - but the API returns float64 when it is e.g. '21.4' degrees Celsius. Struct and response example got updated.

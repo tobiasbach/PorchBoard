@@ -3,7 +3,7 @@
         "properties": {
             "value": {
                 "type": "number",
-                "value": 21,
+                "value": 21.4,
                 "unit": "celsius"
             },
             "status": {

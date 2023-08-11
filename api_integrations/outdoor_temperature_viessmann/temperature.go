@@ -35,14 +35,10 @@ func Outside() {
 		log.Fatal(err)
 	}
 
-	// WIP debugging
-	fmt.Print("\n\nRESPONSE BODY:\n")
-	fmt.Print(string(body))
-
 	// unmarshal bytes to struct
 	var outsideTemperature OutsideTemperature
 	json.Unmarshal([]byte(body), &outsideTemperature)
 
-	// WIP debugging
+	// return outsideTemperature (return = print as long as this is a command line tool)
 	fmt.Print(outsideTemperature.Data.Properties.Value.Value)
 }
