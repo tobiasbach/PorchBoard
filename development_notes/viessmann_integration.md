@@ -40,3 +40,8 @@ There is a [public collection](https://www.postman.com/vimicho/workspace/viessma
 
 Need to pass installation ID, gateway serial and device ID with the request. Don't forget the Bearer token for Authorization.
 https://api.viessmann.com/iot/v2/features/installations/INSTALLATION_ID/gateways/GATEWAY_SERIAL/devices/DEVICE_ID/features/heating.sensors.temperature.outside
+
+Request successful, response body in expected format with expected data
+
+WIP: Unmarshaling / accessing data from the response body returns unexpected value:
+FIX: The response example unfortunately returned value '21' which I understood as int64 - but the API returns float64 when it is e.g. '21.4' degrees Celsius. Struct and response example got updated.
