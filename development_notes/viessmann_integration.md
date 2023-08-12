@@ -12,34 +12,32 @@ Free basic package: 1450 API calls per day, 1 active client, limited feature ava
 [Data Points](https://documentation.viessmann.com/static/iot/data-points)  
 \- overview of available data points depending on subscription
 
-
-
 ## Notes from first auth attempt
 
 Switch from corporate to personal Postman account
 
 There is a [public collection](https://www.postman.com/vimicho/workspace/viessmann-api-public/collection/12055031-17157e90-a2e8-47b6-a7b8-2320c2941db3?action=share&creator=12055031) with prepared requests available for Postman
 
-1st request in browser 'Authorization request'
+### 1st request in browser 'Authorization request'
   requires code challenge
   scope param: 'IoTUser offline_access'
 
   returns code TTL 20 seconds!
 
-2nd request via Postman 'Authorization code exchange'
+### 2nd request via Postman 'Authorization code exchange'
   requires response code from step one
   requires code verifier
 
   returns Bearer token TTL 3600 seconds
   returns refresh_token (if scope in step one includes 'offline_access') TTL 180 days / 15552000 seconds
 
-3rd request 'Authorization code exchange'
+### 3rd request 'Authorization code exchange'
   requires refresh token
 
 ## Notes from first data request
 
 Need to pass installation ID, gateway serial and device ID with the request. Don't forget the Bearer token for Authorization.
-https://api.viessmann.com/iot/v2/features/installations/INSTALLATION_ID/gateways/GATEWAY_SERIAL/devices/DEVICE_ID/features/heating.sensors.temperature.outside
+`https://api.viessmann.com/iot/v2/features/installations/INSTALLATION_ID/gateways/GATEWAY_SERIAL/devices/DEVICE_ID/features/heating.sensors.temperature.outside`
 
 Request successful, response body in expected format with expected data
 

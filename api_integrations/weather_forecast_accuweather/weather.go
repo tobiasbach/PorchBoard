@@ -3,7 +3,8 @@ package weather
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
+	"log"
 	"net/http"
 	"os"
 
@@ -14,15 +15,16 @@ import (
 func Forecast() {
 	godotenv.Load(".env")
 
-	// location key for 15370 Fredersdorf: '1026032'
-	// TO-DO move to env file
-	url := fmt.Sprintf("http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/1026032?apikey=%s&language=en&details=true&metric=true", os.Getenv("APIKeyAccuWeather"))
-	resp, _ := http.Get(url)
+	url := fmt.Sprintf("http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/%s?apikey=%s&language=en&details=true&metric=true", os.Getenv("AccuWeatherLocationKey"), os.Getenv("AccuWeatherAPIKey"))
+	resp, err := http.Get(url)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	defer resp.Body.Close()
 
 	// convert response body to bytes:
-	body, _ := ioutil.ReadAll(resp.Body)
+	body, _ := io.ReadAll(resp.Body)
 
 	// unmarshal bytes to array of structs
 	var weather []struct{ Weather }
