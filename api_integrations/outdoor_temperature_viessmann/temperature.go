@@ -11,7 +11,10 @@ import (
 	"github.com/joho/godotenv"
 )
 
+// returns current outside temperature provided by personal heating system
 func Outside() {
+	refreshBearerToken()
+
 	godotenv.Load(".env")
 
 	url := fmt.Sprintf("https://api.viessmann.com/iot/v2/features/installations/%s/gateways/%s/devices/%s/features/heating.sensors.temperature.outside", os.Getenv("ViessmannInstallationID"), os.Getenv("ViessmannGatewaySerial"), os.Getenv("ViessmannDeviceID"))
@@ -40,5 +43,5 @@ func Outside() {
 	json.Unmarshal([]byte(body), &outsideTemperature)
 
 	// return outsideTemperature (return = print as long as this is a command line tool)
-	fmt.Print(outsideTemperature.Data.Properties.Value.Value)
+	fmt.Printf("\nIt's %.1f degrees outside\n\n", outsideTemperature.Data.Properties.Value.Value)
 }
