@@ -10,6 +10,7 @@ import (
 func main() {
 	traffic.Conditions()
 	weather.Forecast()
+	temperature.RefreshBearerToken()
 	temperature.Outside()
 	vbb.Departures()
 }
