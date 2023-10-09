@@ -12,7 +12,7 @@ import (
 )
 
 // returns next departures from a specific stop within a time span (default 60 minutes from now)
-func Departures() {
+func Departures() string {
 	godotenv.Load(".env")
 
 	// calling departureBoard endpoint - requires to get the stopId first
@@ -35,6 +35,7 @@ func Departures() {
 	var departureBoard DepartureBoard
 	xml.Unmarshal([]byte(body), &departureBoard)
 
-	// return departureBoard (return = print as long as this is a command line tool)
-	fmt.Printf("Next departure from %s at %s direction %s\n\n", fmt.Sprintf(departureBoard.Departure[0].Stop), fmt.Sprint(departureBoard.Departure[0].Time), fmt.Sprintf(departureBoard.Departure[0].Direction))
+	// return departures (only the first entry of departureBoard for now)
+	value := fmt.Sprintf("Next departure from %s at %s direction %s", fmt.Sprintf(departureBoard.Departure[0].Stop), fmt.Sprint(departureBoard.Departure[0].Time), fmt.Sprintf(departureBoard.Departure[0].Direction))
+	return value
 }
