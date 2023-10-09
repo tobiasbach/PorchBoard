@@ -26,3 +26,5 @@ func main() {
 	})
 	r.Run()
 }
+
+// until a specific port is defined, serving on localhost:8080/board
