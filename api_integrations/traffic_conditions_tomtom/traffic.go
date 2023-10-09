@@ -11,8 +11,12 @@ import (
 	"github.com/joho/godotenv"
 )
 
-// returns travel times to specific destinations
-func Conditions() {
+// returns travel time to a specific destination
+// to-do: to check the actual condition of your preferred path, adjust route by adding more locations
+//
+//	the current implementation routes from a to b which may returns your common expected travel
+//	time but actually uses a different path due to traffic jams, etc
+func Conditions() string {
 	godotenv.Load(".env")
 
 	route := fmt.Sprintf("%s:%s", os.Getenv("TomTomHomeCoordinates"), os.Getenv("TomTomDestinationCoordinates"))
@@ -32,6 +36,7 @@ func Conditions() {
 	var traffic Traffic
 	json.Unmarshal([]byte(body), &traffic)
 
-	// return travel time in minutes (return = print as long as this is a command line tool)
-	fmt.Printf("\n%s minutes to Strausberg Ferry by car\n\n", fmt.Sprint(traffic.Routes[0].Summary.TravelTimeInSeconds/60))
+	// return trafficConditions (travel time in minutes)
+	value := fmt.Sprintf("%s minutes to Strausberg ferry by car", fmt.Sprint(traffic.Routes[0].Summary.TravelTimeInSeconds/60))
+	return value
 }

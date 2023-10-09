@@ -12,7 +12,7 @@ import (
 )
 
 // returns current outside temperature provided by personal heating system
-func Outside() {
+func Outside() string {
 	refreshBearerToken()
 
 	godotenv.Load(".env")
@@ -42,6 +42,7 @@ func Outside() {
 	var outsideTemperature OutsideTemperature
 	json.Unmarshal([]byte(body), &outsideTemperature)
 
-	// return outsideTemperature (return = print as long as this is a command line tool)
-	fmt.Printf("\nIt's %.1f degrees outside\n\n", outsideTemperature.Data.Properties.Value.Value)
+	// return outsideTemperature
+	value := fmt.Sprintf("It's %.1f degrees outside", outsideTemperature.Data.Properties.Value.Value)
+	return value
 }
