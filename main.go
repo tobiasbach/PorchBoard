@@ -13,15 +13,11 @@ import (
 func main() {
 	r := gin.Default()
 	r.GET("/board", func(c *gin.Context) {
-		trafficConditionsValue := traffic.Conditions()
-		// weatherForecastValue := weather.Forecast()
-		outsideTemperatureValue := temperature.Outside()
-		departuresValue := vbb.Departures()
 		c.JSON(200, gin.H{
-			"trafficConditions": trafficConditionsValue,
-			// "weatherForecast": weatherForecastValue,
-			"outsideTemperature": outsideTemperatureValue,
-			"departures":         departuresValue,
+			"trafficConditions": traffic.Conditions(),
+			// "weatherForecast": weather.Forecast(),
+			"outsideTemperature": temperature.Outside(),
+			"departures":         vbb.Departures(),
 		})
 	})
 	r.Run()
