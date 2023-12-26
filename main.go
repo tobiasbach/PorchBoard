@@ -3,6 +3,7 @@ package main
 import (
 	// weather "PorchBoard/api_integrations/weather_forecast_accuweather"
 
+	car "PorchBoard/api_integrations/auxiliary_heating_car"
 	temperature "PorchBoard/api_integrations/outdoor_temperature_viessmann"
 	vbb "PorchBoard/api_integrations/public_transportation_vbb"
 	traffic "PorchBoard/api_integrations/traffic_conditions_tomtom"
@@ -18,6 +19,7 @@ func main() {
 			// "weatherForecast": weather.Forecast(),
 			"outsideTemperature": temperature.Outside(),
 			"departures":         vbb.Departures(),
+			"family car":         car.WarmUpEngineAndCabin(),
 		})
 	})
 	r.Run()
