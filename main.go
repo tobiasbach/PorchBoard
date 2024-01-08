@@ -1,12 +1,12 @@
 package main
 
 import (
-	// weather "PorchBoard/api_integrations/weather_forecast_accuweather"
+	// weather "PorchBoard/integrations/weather_forecast_accuweather"
 
-	car "PorchBoard/api_integrations/auxiliary_heating_car"
-	temperature "PorchBoard/api_integrations/outdoor_temperature_viessmann"
-	vbb "PorchBoard/api_integrations/public_transportation_vbb"
-	traffic "PorchBoard/api_integrations/traffic_conditions_tomtom"
+	// car "PorchBoard/integrations/auxiliary_heating_car"
+	temperature "PorchBoard/integrations/outdoor_temperature_viessmann"
+	vbb "PorchBoard/integrations/public_transportation_vbb"
+	traffic "PorchBoard/integrations/traffic_conditions_tomtom"
 
 	"github.com/gin-gonic/gin"
 )
@@ -16,10 +16,10 @@ func main() {
 	r.GET("/board", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"trafficConditions": traffic.Conditions(),
-			// "weatherForecast": weather.Forecast(),
+			// "weatherForecast":    weather.Forecast(),
 			"outsideTemperature": temperature.Outside(),
 			"departures":         vbb.Departures(),
-			"family car":         car.WarmUpEngineAndCabin(),
+			// "family car":         car.WarmUpEngineAndCabin(),
 		})
 	})
 	r.Run()

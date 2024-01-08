@@ -1,19 +1,22 @@
-# PorchBoard
+# PorchBoard 🚶🏼🏠
 
-## This is an training application
+## This is an training application. It will become a infotainment board that provides relevant data to users before they leave the house. It may be extended by smart home controls
 
-## It will become an infotainment board that provides users with relevant data before they leave the house
+### Evolution plan
 
-Incomplete list of examples:
+* hard coded cli tool - DONE
+* hard coded application with a static UI - IN PROGRESS
+* above plus toggle buttons
+* 'real' application with a dynamic UI
 
-* weather data
-  * current outdoor temperature (from personal heating system via [Viessmann](https://developer.viessmann.com/start.html))
-  * short-term weather forecast ([AccuWeather](https://developer.accuweather.com))
-* transportation data
-  * estimated travel time for frequently used routes ([TomTom](https://developer.tomtom.com/))
-  * next train from local station to x leaving in x minutes ([VBB](https://www.vbb.de/vbb-services/api-open-data/api))
-  * travel time for the previous option
-* appointments data
-  * calendar events (Google Calendar API)
+### What might be presented to the user
+
+* weather
+  * current outdoor temperature
+  * short-term weather forecast
+* transportation
+  * estimated travel time for frequently used routes by car
+  * upcoming public transport departurtes from closest station(s) to selected destinations
+  * travel time for the previous options
+* calendar events
 * public warnings
-  * information and warnings for citizens (BIWAPP or similar)

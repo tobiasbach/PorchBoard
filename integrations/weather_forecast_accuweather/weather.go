@@ -33,6 +33,7 @@ func Forecast() {
 	}
 
 	// iterate over array of structs and return selected values (return = print as long as this is a command line tool)
+	// TO-DO: assign strings to variable and return the variable
 	for i, w := range weather {
 		if i == 0 {
 		} else if i == 1 {
